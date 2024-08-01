@@ -1,0 +1,50 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "api:download": "wget http://localhost:3040/swagger-yaml -O ./shared/api/schema.yaml && wget http://localhost:3040/static/types/FieldsData.ts -O ./shared/types/FieldsData.ts",
+    "api:generate": "orval",
+    "api:update": "npm run api:download && npm run api:generate && rm -rf ./.nuxt",
+    "prisma:update": "npx prisma migrate reset --force && npx prisma db push && npx prisma generate"
+  },
+  "dependencies": {
+    "@kalimahapps/vue-icons": "^1.7.1",
+    "@nuxt/kit": "^3.11.2",
+    "@tanstack/vue-query": "^5.29.0",
+    "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
+    "js-file-download": "^0.4.12",
+    "mobile-detect": "^1.4.5",
+    "nuxt": "^3.11.2",
+    "nuxt-aos": "^1.2.5",
+    "orval": "^6.27.1",
+    "pinia": "^2.1.7",
+    "prettier-plugin-tailwindcss": "^0.5.13",
+    "swiper": "^11.1.3",
+    "uuid": "^9.0.1",
+    "video.js": "^8.5.0",
+    "vue": "^3.4.21",
+    "vue-easy-lightbox": "^1.19.0",
+    "vue-router": "^4.3.0",
+    "vue3-toastify": "^0.2.1",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vee-validate/nuxt": "^4.12.6",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.7.0",
+    "nuxt-swiper": "^1.2.2",
+    "prettier": "3.3.3",
+    "sass": "^1.75.0"
+  }
+}
